@@ -1,11 +1,8 @@
 public class Strinteger implements StrintegerInterface{
-    private String strinteger;
     private short[] setval = new short[8];
-    private boolean negative;
     @Override
-    public void set(long value) {
-        if(value >= 0)
-            negative = true;
+    public String encrint(long value) {
+        String strinteger;
         value = Long.reverseBytes(Long.reverse(value));
         for (byte part = 7; part >= 0; part--) {
             for (byte partt = 7; partt >= 0; partt--) {
@@ -18,9 +15,10 @@ public class Strinteger implements StrintegerInterface{
         for (short bb : setval) {
             strinteger += Character.toString(bb);
         }
+        return strinteger;
     }
     @Override
-    public long get() {
+    public long decrint(String strinteger) {
         char[] listeger = strinteger.toCharArray();
         long number = 0;
         for(char c : listeger) {

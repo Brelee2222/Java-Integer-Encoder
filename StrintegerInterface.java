@@ -1,4 +1,4 @@
 public interface StrintegerInterface {
-    void set(long value);
-    long get();
+    String encrint(long value);
+    long decrint(String strinteger);
 }
